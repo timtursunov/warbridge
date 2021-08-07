@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"name": "warbridge",
+		"path": "."
+	},
+	{
+		"name": "img",
+		"path": "../../parallax/Pure-CSS-Multilayer-Parallax/img"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "warbridge"
+  }
+}
