@@ -31,12 +31,42 @@ let nextBtn = document.querySelector('#next')
 let prevBtn = document.querySelector('#prev')
 let holder = document.querySelector('.holder')
 
+// photo containers ids
+let container1 = document.querySelector('#imgDivOne')
+let container2 = document.querySelector('#imgDivTwo')
+let container3 = document.querySelector('#imgDivThree')
+let container4 = document.querySelector('#imgDivFour')
+// holders container ids
+let holder2 = document.querySelector('#holderDivTwo')
+let holder3 = document.querySelector('#holderDivThree')
+let holder4 = document.querySelector('#holderDivFour')
+let holder5 = document.querySelector('#holderDivFour')
+
+
+
+
 let previousSlide = () => {
     currentSlide = currentSlide - 1;
     if (currentSlide >= 0){
+        holder2.classList.add('holder--prev')
+        container2.classList.remove('slide--next')
         let unit = -currentSlide*1405
         let leftPosition = unit+'px'
         holder.style.left = leftPosition
+        if(currentSlide === 1){
+            holder3.classList.add('holder--prev')
+            container3.classList.remove('slide--next')
+            let unit = -currentSlide*1405
+            let leftPosition = unit+'px'
+            holder.style.left = leftPosition
+        } else if (currentSlide === 2){
+            holder4.classList.add('holder--prev')
+            container4.classList.remove('slide--next')
+            let unit = -currentSlide*1405
+            let leftPosition = unit+'px'
+            holder.style.left = leftPosition
+        } 
+
     } else {
         console.log('its done')
     }
@@ -44,9 +74,28 @@ let previousSlide = () => {
 let nextSlide = () => {
     currentSlide = currentSlide + 1;
     if(currentSlide <= 3){
-        let unit = -currentSlide*1405
-        let leftPosition = unit+'px'
-        holder.style.left = leftPosition
+        if(currentSlide === 1){
+            container2.classList.add('slide--next')
+            holder2.classList.remove('holder--prev')
+            let unit = -currentSlide*1405
+            let leftPosition = unit+'px'
+            holder.style.left = leftPosition
+            console.log('it worked')
+        }  else if (currentSlide === 2) {
+            console.log('two')
+            container3.classList.add('slide--next')
+            holder3.classList.remove('holder--prev')
+            let unit = -currentSlide*1405
+            let leftPosition = unit+'px'
+            holder.style.left = leftPosition
+        } else if (currentSlide === 3){
+            console.log('three')
+            container4.classList.add('slide--next')
+            holder4.classList.remove('holder--prev')
+            let unit = -currentSlide*1405
+            let leftPosition = unit+'px'
+            holder.style.left = leftPosition
+        }
     } else {
         console.log('its done')
     }
