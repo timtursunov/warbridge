@@ -115,7 +115,8 @@ h4 {
 }
 .hero__btn,
 .header__btn,
-.slide__button {
+.slide__button,
+.card__overlay button {
   background-color: black;
   color: inherit;
   border: 1px solid black;
@@ -152,9 +153,7 @@ h4 {
 }
 .carousel__nav {
   display: flex;
-  width: 100%;
-  margin-left: 14%;
-  margin-right: 14%;
+  width: 1720px;
   justify-content: space-between;
 }
 .carousel__text p {
@@ -164,6 +163,7 @@ h4 {
 .carousel__btn {
   width: 65px;
   height: 65px;
+  border: 0px;
 }
 .carousel_btns {
   display: flex;
@@ -190,7 +190,7 @@ h4 {
   left: 0;
   width: 7295px;
   height: 780px;
-  transition: left 3s ease-in-out;
+  transition: left 4s ease-in-out;
 }
 .holder__slide {
   width: 1305px;
@@ -203,7 +203,6 @@ h4 {
   flex-wrap: wrap;
   position: relative;
   z-index: 1000;
-  transition: 6s;
 }
 .slide__p-top {
   margin-top: 160px;
@@ -221,7 +220,8 @@ h4 {
 }
 .slide__text {
   width: 420px;
-  transition: 2s;
+  color: white;
+  transition: 3.1s ease-in-out;
 }
 .slide__text p {
   font-size: 16px;
@@ -241,41 +241,29 @@ h4 {
 .slide1 {
   background-image: url("../assets/images/carousel/01.png");
 }
-.slide2 {
-  height: 650px;
-  width: 720px;
-  background-image: url("../assets/images/carousel/02.png");
-  background-size: 150%;
-  background-position-x: -350px;
-  background-position-y: -215px;
-  transition: 2s;
-}
-.slide3 {
-  height: 650px;
-  width: 720px;
-  background-image: url("../assets/images/carousel/03.png");
-  background-size: 150%;
-  background-position-x: -350px;
-  background-position-y: -215px;
-  transition: 2s;
-}
-.slide4 {
-  height: 650px;
-  width: 720px;
-  background-image: url("../assets/images/carousel/04.png");
-  background-size: 150%;
-  background-position-x: -350px;
-  background-position-y: -215px;
-  transition: 2s;
-}
+.slide2,
+.slide3,
+.slide4,
 .slide5 {
   height: 650px;
   width: 720px;
-  background-image: url("../assets/images/carousel/01.png");
+  transition: 3.5s ease-out;
   background-size: 150%;
   background-position-x: -350px;
   background-position-y: -215px;
-  transition: 1s ease-in-out;
+}
+.slide2 {
+  background-image: url("../assets/images/carousel/02.png");
+}
+.slide3 {
+  background-image: url("../assets/images/carousel/03.png");
+  height: 672px;
+}
+.slide4 {
+  background-image: url("../assets/images/carousel/04.png");
+}
+.slide5 {
+  background-image: url("../assets/images/carousel/01.png");
 }
 /* preview slide */
 
@@ -290,6 +278,7 @@ h4 {
   align-content: center;
   height: 130px;
   border-top: 1px solid black;
+  transition: 2.5s ease-out;
 }
 .slide__image-heading h4 {
   margin-top: 24px;
@@ -298,6 +287,11 @@ h4 {
   font-size: Lexend;
   width: 305px;
 }
+/* custom  */
+.current__text {
+  color: #211e1b;
+}
+
 /* next slide transformation */
 .slide--next {
   height: 800px;
@@ -305,24 +299,20 @@ h4 {
   background-size: 100%;
   background-position: 0 0;
 }
-.holder--prev {
-  width: 375px;
+.slide__text--next {
+  color: #211e1b;
 }
-/* for tmrw */
-/* .slide__text p,
-.slide__text h4,
-.slide__text button,
-.slide__text button p {
-  color: white;
+.slide__image-heading--next {
   border: 1px solid white;
-} */
+  color: white;
+}
 
 /* team change to % */
 .team {
   background-color: white;
 }
 .team__container {
-  padding: 180px 0;
+  padding: 180px 250px;
 }
 .team__description-box {
   margin-top: 32px;
@@ -337,31 +327,39 @@ h4 {
 .team__description-box {
   text-align: center;
 }
-.team__cards {
+.cards {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
-.team__image {
-  background-image: url("../assets/images/profile/285-2856724_user-avatar-enter-free-photo-user-avatar-green.png");
+.card__avatar {
+  position: relative;
+}
+.card__avatar:hover .card__overlay {
+  opacity: 1;
+}
+.card__avatar img {
   width: 470px;
   height: 470px;
-  background-size: cover;
 }
-.item-paragraph {
-  font-size: 16px;
-  text-transform: uppercase;
-  color: #211e1b;
-}
-.item__heading {
-  margin-top: 32px;
-  margin-bottom: 10px;
+.card__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 1s ease-in-out;
 }
 .left {
-  margin-right: 30px;
+  margin-right: 60px;
 }
-.right {
-  margin-left: 30px;
+.card__overlay button {
+  padding: 21px 34px;
+  background-color: white;
+  color: #211e1b;
+  margin-left: 137.28px;
+  margin-top: 202.5px;
 }
+
 /* footer */
 /* footer change to % */
 .contact {
