@@ -2,9 +2,20 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 img {
   max-width: 100%;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 /* fonts */
 @font-face {
@@ -21,27 +32,35 @@ img {
 body {
   font-family: Lexend, sans-serif;
   font-size: 21px;
-  color: #211e1b;
 }
 .hero,
-.contact,
 .carousel {
   height: 100vh;
   width: 100vw;
 }
-h1 {
+h1,
+h2,
+h3 {
+  color: #211e1b;
+  font-weight: 600;
   font-size: STIX Two Text;
+}
+h1 {
   font-size: 24px;
+  line-height: 30px;
 }
 h2 {
   font-size: 76px;
-  font-size: STIX Two Text;
   line-height: 72px;
 }
 h3,
 h4 {
   font-size: 42px;
-  font-size: STIX Two Text;
+  font-weight: 600;
+}
+p {
+  font-size: Lexend;
+  font-weight: 400;
 }
 .header {
   display: flex;
@@ -49,13 +68,11 @@ h4 {
   align-items: center;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.3);
-  /* margin: 0 12.76%; */
   height: 91px;
   border: 1px solid black;
-  border-top: 1px solid white;
-  /* transition: height 1s; */
   transition: 0.5s;
   position: fixed;
+  z-index: 5000;
   top: 0;
   width: 74.48%;
 }
@@ -64,16 +81,31 @@ h4 {
 }
 .header__nav {
   width: 21.958041958;
+  margin-right: 2.7972027972%;
+  position: relative;
+  z-index: 100;
 }
 .header__link {
   text-decoration: none;
   color: black;
 }
+.heading__logo {
+  background-image: url("../assets/images/logo/warbridge..png");
+  width: 135.14px;
+  height: 26.35px;
+}
 .header__heading-box {
   margin-left: 2.7972027972%;
+  display: flex;
+  align-items: center;
 }
-.header__nav {
-  margin-right: 2.7972027972%;
+.header__nav a,
+.header__btn-description {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.header__btn-description {
+  color: white;
 }
 .header__link--middle {
   margin: 0 40px;
@@ -92,8 +124,7 @@ h4 {
   pointer-events: none;
 }
 .hero__text {
-  margin-top: 138px;
-  margin-top: 7.2%;
+  margin-top: 228px;
   text-align: center;
   position: relative;
   z-index: 1;
@@ -106,11 +137,10 @@ h4 {
 .hero__heading {
   width: 48%;
   margin-bottom: 32px;
-  margin-bottom: 1.68%;
 }
 .hero__description {
-  width: 24%;
-  font-size: 16px;
+  width: 438px;
+  font-size: 21px;
   line-height: 28px;
 }
 .hero__btn,
@@ -125,12 +155,14 @@ h4 {
   cursor: pointer;
   outline: inherit;
   color: white;
+  text-transform: uppercase;
 }
 .hero__btn {
   background-color: #f6bf52;
   color: black;
   margin-top: 60px;
   margin-top: 3.1%;
+  font-size: 16px;
 }
 .hero__btn-description {
   padding: 25px 33px;
@@ -159,6 +191,7 @@ h4 {
 .carousel__text p {
   margin-top: 24px;
   margin-bottom: 50px;
+  line-height: 28px;
 }
 .carousel__btn {
   width: 65px;
@@ -211,7 +244,7 @@ h4 {
 }
 .slide__p-bottom {
   margin-top: 24px;
-  margin-bottom: 100px;
+  margin-bottom: 76px;
 }
 .slide__imagebox {
   margin-right: 40px;
@@ -220,8 +253,12 @@ h4 {
 }
 .slide__text {
   width: 420px;
+  height: 478px;
+  transition: 3.2s ease-in-out;
   color: white;
-  transition: 3.1s ease-in-out;
+}
+.current__text {
+  color: #211e1b;
 }
 .slide__text p {
   font-size: 16px;
@@ -230,12 +267,23 @@ h4 {
   font-size: 42px;
   line-height: 46px;
 }
-
-.slide__button {
+.slide__button__current {
   color: #211e1b;
   background-color: white;
   width: 250px;
   height: 70px;
+  transition: 3.2s ease-in-out;
+}
+.slide__button {
+  color: white;
+  background-color: white;
+  width: 250px;
+  height: 70px;
+  border: 1px solid white;
+  transition: 3.2s ease-in-out;
+}
+.slide__button--next {
+  color: #211e1b;
 }
 /* slides backgrounds */
 .slide1 {
@@ -257,7 +305,6 @@ h4 {
 }
 .slide3 {
   background-image: url("../assets/images/carousel/03.png");
-  height: 672px;
 }
 .slide4 {
   background-image: url("../assets/images/carousel/04.png");
@@ -287,11 +334,19 @@ h4 {
   font-size: Lexend;
   width: 305px;
 }
-/* custom  */
-.current__text {
-  color: #211e1b;
+.slide-p4,
+.slide-p3 {
+  margin-top: 24px;
+  margin-bottom: 76px;
 }
-
+.slide-p2 {
+  margin-top: 24px;
+  margin-bottom: 122px;
+}
+.slide-p1 {
+  margin-top: 24px;
+  margin-bottom: 100px;
+}
 /* next slide transformation */
 .slide--next {
   height: 800px;
@@ -299,12 +354,18 @@ h4 {
   background-size: 100%;
   background-position: 0 0;
 }
-.slide__text--next {
-  color: #211e1b;
-}
+
 .slide__image-heading--next {
   border: 1px solid white;
   color: white;
+  transition: 2s;
+}
+.slide__text--next {
+  color: #211e1b;
+}
+.slide__button--next {
+  color: #211e1b;
+  border: 1px solid #211e1b;
 }
 
 /* team change to % */
@@ -312,7 +373,7 @@ h4 {
   background-color: white;
 }
 .team__container {
-  padding: 180px 250px;
+  padding: 180px 15%;
 }
 .team__description-box {
   margin-top: 32px;
@@ -331,6 +392,7 @@ h4 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 60px;
 }
 .card__avatar {
   position: relative;
@@ -339,8 +401,12 @@ h4 {
   opacity: 1;
 }
 .card__avatar img {
-  width: 470px;
   height: 470px;
+  width: 470px;
+}
+.card__text h3 {
+  margin-top: 32px;
+  margin-bottom: 10px;
 }
 .card__overlay {
   position: absolute;
@@ -359,7 +425,10 @@ h4 {
   margin-left: 137.28px;
   margin-top: 202.5px;
 }
-
+/* click on style */
+.card__avatar {
+  background-color: white;
+}
 /* footer */
 /* footer change to % */
 .contact {
@@ -370,31 +439,49 @@ h4 {
   padding: 0 5.20833333333%;
   padding-top: 140px;
   padding-top: 7, 3%;
+  height: 1200px;
 }
 .contact__texts {
   display: flex;
   justify-content: space-between;
 }
 .contact__text-left {
-  width: 705px;
-  width: 40%;
+  width: 820px;
 }
-.contact-left__heading {
-  font-size: 86px;
-  font-family: STIX Two Fest;
-}
+
 .contact-left__paragraph-box {
   margin-top: 32px;
   margin-bottom: 90px;
+}
+.contact-left__paragraph-box p {
+  line-height: 28px;
+}
+.contact-left__heading-box p {
+  font-size: 80px;
+  line-height: 82px;
+}
+.contact-left__heading {
+  font-weight: 600;
+  font-size: 86px;
+  font-family: STIX Two Fest;
 }
 .contact-left-lower__paragraph-box {
   margin-top: 2.34%;
   display: flex;
   text-transform: uppercase;
 }
-.contact-left-lower__paragraph-box p,
+.contact__text-container {
+  width: 705px;
+  height: 420px;
+}
+
 .contact__paragpraph-rightbox p {
   font-size: 16px;
+  line-height: 26px;
+}
+.contact-left-lower__paragraph-box {
+  font-size: 21px;
+  line-height: 28px;
 }
 .contact__paragpraph-rightbox p {
   text-decoration: underline;
@@ -406,11 +493,14 @@ h4 {
   flex-wrap: wrap;
   width: 750px;
   padding-bottom: 41px;
-  padding-top: 156px;
+  padding-top: 161px;
 }
 .contact__info a {
   width: 563px;
   font-size: 56px;
+  line-height: 70px;
+  font-family: Stix Two Text;
+  font-weight: 600;
   text-decoration: none;
   color: black;
 }
@@ -419,9 +509,18 @@ h4 {
   background-color: white;
   padding-left: 50px;
 }
-
+.contact-left__text-upper {
+  width: 700px;
+}
+.contact-left-lower__paragraph-box p {
+  font-size: 16px;
+  line-height: 22px;
+}
+.lower__paragraph--middle {
+  margin-left: 15px;
+  margin-right: 15px;
+}
 /*  text-decoration: underline; */
-
 /* tablet media */
 @media (max-width: 860px) {
   body {
@@ -434,7 +533,6 @@ h4 {
     background-color: none;
   }
 }
-
 .pink {
   background-color: pink;
 }
