@@ -20,8 +20,8 @@ let text = document.querySelector('#text')
 window.addEventListener('scroll', (() => {
     let value = window.scrollY;
     layer1.style.top = value * 0.5 + 'px'
-    layer2.style.top = value * 0.15 + 'px'
-    layer3.style.top = value * 0.8 + 'px'
+    layer2.style.top = value * 0.7 + 'px'
+    layer3.style.top = value * 0.2 + 'px'
 }))
 
 //slider function

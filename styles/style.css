@@ -33,10 +33,12 @@ body {
   font-family: Lexend, sans-serif;
   font-size: 21px;
 }
-.hero,
-.carousel {
+.hero {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+}
+.carousel {
+  min-height: 1274px;
 }
 h1,
 h2,
@@ -66,7 +68,6 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   height: 91px;
   border: 1px solid black;
@@ -122,6 +123,11 @@ p {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+  object-position: bottom;
+}
+
+.hero__text--wrapper {
+  height: 100vh;
 }
 .hero__text {
   margin-top: 228px;
@@ -135,7 +141,7 @@ p {
   justify-content: center;
 }
 .hero__heading {
-  width: 48%;
+  max-width: 880px;
   margin-bottom: 32px;
 }
 .hero__description {
@@ -175,13 +181,9 @@ p {
   background-image: url("../assets/images/background/Illustration\ BG.png");
   background-position: center;
   background-size: cover;
-}
-.carousel__wrapper {
-  padding: 100px;
-  justify-content: center;
-  padding: 100px;
   display: flex;
-  flex-wrap: wrap;
+  padding-top: 160px;
+  justify-content: center;
 }
 .carousel__nav {
   display: flex;
@@ -223,7 +225,7 @@ p {
   left: 0;
   width: 7295px;
   height: 780px;
-  transition: left 4s ease-in-out;
+  transition: left 2.25s ease-in-out;
 }
 .holder__slide {
   width: 1305px;
@@ -254,7 +256,7 @@ p {
 .slide__text {
   width: 420px;
   height: 478px;
-  transition: 3.2s ease-in-out;
+  transition: 2.4s ease-in-out;
   color: white;
 }
 .current__text {
@@ -272,7 +274,7 @@ p {
   background-color: white;
   width: 250px;
   height: 70px;
-  transition: 3.2s ease-in-out;
+  transition: 2.4s ease-in-out;
 }
 .slide__button {
   color: white;
@@ -280,7 +282,7 @@ p {
   width: 250px;
   height: 70px;
   border: 1px solid white;
-  transition: 3.2s ease-in-out;
+  transition: 2.4s ease-in-out;
 }
 .slide__button--next {
   color: #211e1b;
@@ -295,7 +297,7 @@ p {
 .slide5 {
   height: 650px;
   width: 720px;
-  transition: 3.5s ease-out;
+  transition: 2.7s ease-out;
   background-size: 150%;
   background-position-x: -350px;
   background-position-y: -215px;
@@ -325,7 +327,7 @@ p {
   align-content: center;
   height: 130px;
   border-top: 1px solid black;
-  transition: 2.5s ease-out;
+  transition: 1.7s ease-out;
 }
 .slide__image-heading h4 {
   margin-top: 24px;
@@ -358,7 +360,7 @@ p {
 .slide__image-heading--next {
   border: 1px solid white;
   color: white;
-  transition: 2s;
+  transition: 1.2s;
 }
 .slide__text--next {
   color: #211e1b;
@@ -370,10 +372,11 @@ p {
 
 /* team change to % */
 .team {
-  background-color: white;
+  min-height: 1630px;
 }
 .team__container {
-  padding: 180px 15%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .team__description-box {
   margin-top: 32px;
@@ -413,7 +416,7 @@ p {
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: 1s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 .left {
   margin-right: 60px;
@@ -435,20 +438,19 @@ p {
   background-image: url("../assets/images/background/Illustration\ Footer.png");
   background-position: center;
   background-size: cover;
-  padding: 0 100px;
-  padding: 0 5.20833333333%;
   padding-top: 140px;
-  padding-top: 7, 3%;
   height: 1200px;
 }
 .contact__texts {
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .contact__text-left {
-  width: 820px;
+  width: 700px;
+  margin-right: 310px;
 }
-
 .contact-left__paragraph-box {
   margin-top: 32px;
   margin-bottom: 90px;
@@ -520,19 +522,151 @@ p {
   margin-left: 15px;
   margin-right: 15px;
 }
-/*  text-decoration: underline; */
 /* tablet media */
-@media (max-width: 860px) {
-  body {
-    background-color: none;
+
+@media (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  /* fonts */
+  .hero__heading,
+  .carousel__text h2,
+  .team__heading,
+  .contact__info a,
+  .contact-left__text-upper p,
+  .contact-left__text-upper span {
+    font-size: 56px;
+    line-height: 56px;
   }
-}
-/* phone media */
-@media (max-width: 320px) {
-  body {
-    background-color: none;
+  .hero__description,
+  .carousel__text p,
+  .team__description,
+  .card__p,
+  .contact-left__paragraph-box p {
+    font-size: 18px;
   }
-}
-.pink {
-  background-color: pink;
+  .contact-left__heading-box h1 {
+    font-size: 21px;
+    line-height: 26.25px;
+  }
+  .header__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+    width: 708px;
+  }
+  .header__nav,
+  .hero__btn p,
+  .slide__p-top {
+    font-size: 14px;
+  }
+  .header__wrapper {
+    padding: 0;
+  }
+  .hero__text {
+    margin-top: 180px;
+  }
+  .hero__heading {
+    width: 590px;
+  }
+  .holder,
+  .carousel__nav {
+    width: 738px;
+  }
+  .carousel {
+    padding-top: 140px;
+    margin-left: 30px;
+
+    background-image: none;
+    background-color: white;
+  }
+  .carousel__text p {
+    margin-bottom: 0px;
+  }
+  .carousel__btn {
+    width: 55px;
+    height: 55px;
+    /* border: 1px solid black; */
+  }
+  .slide__imagebox {
+    width: 637px;
+  }
+
+  .holder__slide {
+    width: 738px;
+  }
+  .slideshow {
+    width: 735px;
+  }
+  .team {
+    min-height: 1388px;
+  }
+  .card__text h3 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+  .card__p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .card__avatar img {
+    width: 344px;
+    height: 344px;
+  }
+  .contact__text-left {
+    margin-right: 0px;
+    height: 300px;
+  }
+  .left {
+    margin-right: 20px;
+  }
+  .contact__texts {
+    display: block;
+  }
+  .contact {
+    height: 1310px;
+    display: flex;
+    padding-top: 80px;
+    justify-content: center;
+  }
+  .contact__info {
+    max-width: 100%;
+    padding-top: 50px;
+    padding-bottom: 0;
+    margin-bottom: 45px;
+  }
+  .contact__paragpraph-rightbox p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .contact__info a {
+    line-height: 70px;
+  }
+  .contact-left__text-upper {
+    width: 526px;
+  }
+  .contact__text-container {
+    width: 708px;
+    height: 310px;
+  }
+  .contact-left__paragraph-box {
+    margin-bottom: 60px;
+  }
+  .contact-left__paragraph-box p {
+    line-height: 24px;
+  }
+  .contact__text-lower {
+    position: relative;
+    top: 320px;
+    display: flex;
+    align-items: baseline;
+    height: 26px;
+    padding-left: 3px;
+  }
+  .contact-left-lower__paragraph-box p {
+    font-size: 14px;
+  }
+  .contact-left__heading-box h1 {
+    margin-right: 40px;
+  }
 }
