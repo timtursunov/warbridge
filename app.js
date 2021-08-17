@@ -160,3 +160,13 @@ teambutton1.addEventListener('click', ()=> {
 })
 
 //elem.parentNode.removeChild(elem)
+
+// draggable slider  using jQuery
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    autoWidth:true,
+    items:4
+})
+
+

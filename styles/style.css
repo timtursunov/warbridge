@@ -522,7 +522,10 @@ p {
   margin-left: 15px;
   margin-right: 15px;
 }
-/* tablet media */
+/* carousel-tablet  */
+.carousel-tablet__container {
+  display: none;
+}
 
 @media (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
   /* fonts */
@@ -553,6 +556,7 @@ p {
   }
   .header {
     width: 708px;
+    position: static;
   }
   .header__nav,
   .hero__btn p,
@@ -572,37 +576,151 @@ p {
   .carousel__nav {
     width: 738px;
   }
-  .carousel {
-    padding-top: 140px;
+  /* tablet media */
+  .carousel-tablet__container {
+    display: block;
+  }
+  .carousel-tablet {
     margin-left: 30px;
-
-    background-image: none;
-    background-color: white;
+    margin-bottom: 140px;
   }
-  .carousel__text p {
-    margin-bottom: 0px;
+  .carousel-tablet__heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 140px 30px 40px 40px;
   }
-  .carousel__btn {
+  .carousel-tablet__heading h2 {
+    font-size: 56px;
+    line-height: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .carousel-tablet__heading h2,
+  .carousel-tablet__heading p {
+    max-width: 526px;
+  }
+  .carousel-tablet__heading p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .carousel-tablet__btns {
+    margin-left: 56px;
+    display: flex;
+  }
+  .carousel-tablet__btn {
+    display: flex;
     width: 55px;
     height: 55px;
-    /* border: 1px solid black; */
+    border: 1px solid black;
   }
-  .slide__imagebox {
+  .tablet-next {
+    margin-left: 8px;
+    background-image: url("../assets/Icons/Arrow\ Right.png");
+  }
+  .tablet-prev {
+    margin-right: 8px;
+    background-image: url("../assets/Icons/Arrow\ Left.png");
+  }
+  .item-img {
+    width: 637px;
+    height: 280px;
+    background-position-x: -177px;
+    background-position-y: -250px;
+    background-size: 150%;
+    border-bottom: 1px solid black;
+  }
+  .item-text {
+    height: 362px;
+    width: 637px;
+    padding: 50px 70px 60px 70px;
+  }
+  .item-text p:first-child {
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+  .item-text h4 {
+    width: 420px;
+    font-size: 42px;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
+  .item-text:nth-child(2) {
+    font-size: 16px;
+    line-height: 22px;
+    width: 640px;
+  }
+  .item-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    height: 70px;
     width: 637px;
   }
+  .item-btn p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .item-img1 {
+    background-image: url("../assets/images/carousel/01.png");
+  }
+  .item-img2 {
+    background-image: url("../assets/images/carousel/02.png");
+  }
+  .item-img3 {
+    background-image: url("../assets/images/carousel/03.png");
+  }
+  .item-img4 {
+    background-image: url("../assets/images/carousel/04.png");
+  }
+  .item {
+    width: 637px;
+    border: 1px solid black;
+    height: 712px;
+    margin-right: 40px;
+  }
+  .carousel {
+    display: none;
+  }
 
-  .holder__slide {
-    width: 738px;
+  .team__text {
+    width: 708px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  .slideshow {
-    width: 735px;
+  .team__heading {
+    text-align: left;
   }
-  .team {
-    min-height: 1388px;
+  .team__description {
+    text-align: left;
+    line-height: 24px;
+  }
+  .card__btn--tablet {
+    display: flex;
+    margin-top: 24px;
+    background: none;
+    padding: 16px 50px;
+    border: 1px solid black;
+    text-transform: uppercase;
+    color: #211e1b;
+  }
+  .team__description-box {
+    margin-top: 16px;
+    display: block;
   }
   .card__text h3 {
     font-size: 36px;
     line-height: 36px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+  .card__text p {
+    text-transform: uppercase;
   }
   .card__p {
     font-size: 14px;
@@ -668,5 +786,14 @@ p {
   }
   .contact-left__heading-box h1 {
     margin-right: 40px;
+  }
+}
+@media (min-device-width: 900px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  .carousel-tablet__heading {
+    margin: 140px 150px 40px 150px;
+  }
+
+  .carousel-tablet {
+    margin-left: 150px;
   }
 }
